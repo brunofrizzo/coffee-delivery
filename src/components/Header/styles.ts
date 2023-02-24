@@ -9,25 +9,34 @@ export const HeaderContainer = styled.header`
         display: flex;
         gap: 0.5rem;
 
+        a.locale {
+            color: ${(props) => props.theme['purple-dark']};
+            background: ${(props) => props.theme['purple-light']};
+            text-decoration: none;
+            
+            &:hover {
+                color: ${(props) => props.theme['purple']};
+            }
+
+            span {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
         a {
-            width: 3rem;
-            height: 3rem;
+            padding: 0.25rem 0.5rem;
 
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            color: ${(props) => props.theme['yellow']};
+            color: ${(props) => props.theme['yellow-dark']};
+            background: ${(props) => props.theme['yellow-light']};
 
             border-top: 3px solid transparent;
             border-bottom: 3px solid transparent;
+            border-radius: 0.5rem;
 
             &:hover {
-                border-bottom: 3px solid ${(props) => props.theme['yellow-light']};
-            }
-
-            &:active {
-                color: ${(props) => props.theme['yellow-dark']};
+                border-bottom: 3px solid ${(props) => props.theme['yellow']};
             }
         }
     }

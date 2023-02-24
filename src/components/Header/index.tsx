@@ -11,11 +11,14 @@ export function Header() {
                 <img src={imgLogo} alt="Logo Coffee Delivery" />
             </NavLink>
             <nav>
-                <NavLink to="/locale" title="Localização">
-                    <MapPin size={24} />
+                <NavLink className="locale" to="/locale" title="Localização">
+                    <span>
+                        <MapPin size={24} />
+                        Santa Maria - RS
+                    </span>
                 </NavLink>
                 <NavLink to="/checkout" title="Carrinho">
-                    <ShoppingCart size={24} />
+                    <ShoppingCart size={24} weight="fill"/>
                 </NavLink>
             </nav>
         </HeaderContainer>
