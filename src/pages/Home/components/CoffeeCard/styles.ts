@@ -35,7 +35,6 @@ export const CoffeeCardContainer = styled.div`
         font-size: 0.625rem;
         font-weight: 700;
         text-transform: uppercase;
-
     }
 
     .coffeeDescription {
@@ -61,5 +60,9 @@ export const CoffeeCardContainer = styled.div`
         border-radius: 0.5rem;
 
         width: 35%;
+
+        svg {
+            cursor: pointer;
+        }
     }
 `
