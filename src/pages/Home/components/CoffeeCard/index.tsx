@@ -38,7 +38,7 @@ export function CoffeeCard(props: CoffeeCardProps) {
             <div>
                 <span className="coffeePrice">
                     R$
-                    <span>{props.price}</span>
+                    <span>{props.price.toLocaleString()}</span>
                 </span>
                 <div className="quantityToAddedToChart">
                     <Minus onClick={handleClickMinusButton} />

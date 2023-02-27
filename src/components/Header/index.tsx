@@ -16,7 +16,7 @@ export function Header() {
                 <img src={imgLogo} alt="Logo Coffee Delivery" />
             </NavLink>
             <nav>
-                <NavLink className="locale" to="/locale" title="Localização">
+                <NavLink className="locale" to="/" title="Localização">
                     <span>
                         <MapPin size={24} />
                         Santa Maria - RS

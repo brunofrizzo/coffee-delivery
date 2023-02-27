@@ -10,13 +10,11 @@ export const HeaderContainer = styled.header`
         gap: 0.5rem;
 
         a.locale {
+            cursor: inherit;
+            text-decoration: none;
+
             color: ${(props) => props.theme['purple-dark']};
             background: ${(props) => props.theme['purple-light']};
-            text-decoration: none;
-            
-            &:hover {
-                color: ${(props) => props.theme['purple']};
-            }
 
             span {
                 display: flex;
@@ -34,12 +32,11 @@ export const HeaderContainer = styled.header`
             border-top: 3px solid transparent;
             border-bottom: 3px solid transparent;
             border-radius: 0.5rem;
-
-            &:hover {
-                border-bottom: 3px solid ${(props) => props.theme['yellow']};
-            }
         }
 
+        a.cart:hover {
+            border-bottom: 3px solid ${(props) => props.theme['yellow']};
+        }
         a.cart span {
             position: absolute;
             color: #fff;
