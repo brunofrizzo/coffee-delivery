@@ -39,5 +39,13 @@ export const HeaderContainer = styled.header`
                 border-bottom: 3px solid ${(props) => props.theme['yellow']};
             }
         }
+
+        a.cart span {
+            position: absolute;
+            color: #fff;
+            background: ${props => props.theme['yellow-dark']};
+            border-radius: 50%;
+            padding: 0 5px 0 5px;
+        }
     }
 `

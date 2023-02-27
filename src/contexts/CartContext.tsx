@@ -1,10 +1,11 @@
-import { createContext, ReactNode, useState } from "react";
+import { createContext, ReactNode, useEffect, useState } from "react";
 import { CartItemInterface } from "../pages/Home";
 
 interface CartContextType {
     cartItems: CartItemInterface[];
     updateCart: (item: CartItemInterface, action: 'update' | 'insert') => void;
     deleteItemFromCart: (itemId: number) => void;
+    cartItemsCount: number;
 }
 
 export const CartContext = createContext({} as CartContextType)
@@ -16,6 +17,11 @@ interface CartContextProviderProps {
 export function CartContextProvider({ children }: CartContextProviderProps) {
 
     const [cartItems, setCartItems] = useState<CartItemInterface[]>([]);
+    const [cartItemsCount, setCartItemsCount] = useState(cartItems.length);
+
+    useEffect(() => {
+        setCartItemsCount(cartItems.length)
+    }, [cartItems]);
 
     function updateCart(item: CartItemInterface, action: 'update' | 'insert') {
         let itemAlreadyInCart = cartItems.some((cartItem) => {
@@ -45,7 +51,12 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
     }
 
     return (
-        <CartContext.Provider value={{ cartItems, updateCart, deleteItemFromCart }}>
+        <CartContext.Provider value={{ 
+            cartItems,
+            updateCart,
+            deleteItemFromCart,
+            cartItemsCount
+        }}>
             {children}
         </CartContext.Provider>
     );

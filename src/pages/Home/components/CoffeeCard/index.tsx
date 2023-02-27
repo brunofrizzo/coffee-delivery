@@ -21,7 +21,8 @@ export function CoffeeCard(props: CoffeeCardProps) {
     const [quantity, setQuantity] = useState(1);
 
     function handleClickMinusButton() {
-        setQuantity(quantity => quantity -= 1)
+        if(quantity > 1) 
+            setQuantity(quantity => quantity -= 1)
     }
 
     function handleClickPlusButton() {
